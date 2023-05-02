@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Roboto:wght@500&display=swap');     
+
+/*pseudoclase*/
+:root{
+    --background-color: #F6B26B; /* variable llamada "background-color" */
+    --color-primario: blue;
+    --color-text: brown;
+    --colorVM: rgb(16, 252, 28);
+    --color-footer: #173ff093;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif; /*si no se encuentra la 1a fuente, se usa la 2a */
+}
+
+*{
+    margin: 0;
+    padding: 0; /*top y bottom*/
+}
+
+.container{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.encabezado-1{
+    text-align: center;
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+/*Categorías*/
+.top-categories{
+    display: flex;
+    flex-direction: column; /*la dirección será en columnas*/
+    gap: 2rem;
+    margin-bottom: 3rem; /*aplicando margen debajo del elemento*/
+}
+
+.container-categories{
+    display: grid; /* divide en rejillas(cuadriculado) */
+    grid-template-columns: repeat(3,1fr); /* esos 3 cuadritos ocuparán 1 fracción/proporción c/u*/
+    gap: 3rem;
+}
+
+
+.card-category{
+    height: 20rem; /*altura del contenedor*/
+    display: flex;
+    flex-direction: column; /*definimos como se van a acomodar los elementos: columnas*/
+    align-items: center;
+    justify-content: center; /*contenido centrado: justificado*/
+    border-radius: 2rem;
+    gap: 2rem; /*espacio entre columnas*/
+}
+
+
+.category-prenda1{
+    background-image: linear-gradient(180deg, #c0392b, #8e44ad,#00000020), url('../img/playera.jpg');
+    background-size: cover;
+    background-position: top; /* posicionar imagen de fondo con la dirección abajo*/
+    background-repeat: no-repeat; /*si la imagen es muy grande no se repita*/
+}
+
+.category-prenda2{
+    
+    background-image: linear-gradient(180deg, #c0392b, #8e44ad,#00000020), url('../img/camisa.jpg');
+    background-size: cover;
+    background-position: top; /* posicionar imagen de fondo con la dirección abajo*/
+    background-repeat: no-repeat; /*si la imagen es muy grande no se repita*/
+}
+
+.category-prenda3{
+    background-image: linear-gradient(180deg, #c0392b, #8e44ad,#00000020), url('../img/pantalon.jpg');
+    background-size: cover;
+    background-position: top; /* posicionar imagen de fondo con la dirección abajo*/
+    background-repeat: no-repeat; /*si la imagen es muy grande no se repita*/ 
+}
+
+.card-category p{
+    font-size: 2.5rem;
+    color: #fff;
+    text-transform: capitalize;/*Primera letra en mayúscula*/
+    position: relative; /*dónde queremos que se encuentre el elemento (encima, relativo)*/
+}
+
+.card-category p::after{
+    content: ''; /*genera un espacio en blanco*/
+    width: 2.5rem; /*ancho de elemento de arriba*/
+    height: 2px; /*alto de elemento de arriba*/
+    background-color:#fff;
+    position: absolute;
+    bottom: -1rem;
+    left: -50%;
+    transform: translate(-50%,50%);
+}
+
+.card-category span{
+    font-size: 1.6rem;
+    color: #fff;
+    cursor: pointer; /*modificando al puntero del mouse*/
+}
+
+.card-category span:hover{
+    color: var(--colorVM);
+
+}
+
+
+
+.contenedor-uno{
+    max-width: 120rem; /*ajustamos el ancho máximo del contenedor*/
+    margin: 0 auto; /* se ajusta automáticamente */
+}
+
+/*Modificando elementos del header h1,a */
+.contenedor-logo{
+    display: flex;
+    align-items: center;
+    gap: 2.5rem; /*espacio entre filas y columnas */
+}
+
+.contenedor-logo img{
+    width: 50px;
+    height: 50px;
+    
+}
+
+.contenedor-logo h1{
+    color: brown;
+    font-size: 3rem;
+    text-transform: uppercase; /* convierte texto en mayúsculas*/
+    letter-spacing: -1px; /*espaciado de letras*/
+}
+
+/* Modificaciones del Nav */
+.contenedor-menu{
+    background-color: var(--background-color);
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between; /* espacio entre elementos internos */
+    align-items: center; /*centra todo lo que tiene el contenedor*/
+    padding: 1rem 0;
+}
+
+
+.menu{
+    display: flex; /*Todos los elementos en una sola línea*/
+    gap: 2rem;
+}
+
+.menu li{
+    list-style: none; /*quitamos las características por default de ul*/
+}
+
+.menu a{
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: var(--color-text); /*usamos variable en root para cambiar color */
+    font-weight: 600; /*aplicando al texto en negritas*/
+    text-transform: uppercase;
+    position: relative;
+}
+
+/* ejemplo de uso de after */
+.menu a::after{
+    width: 1.5rem;
+    height: 1px;
+    background-color: #fff;
+    position: absolute; /*por encima de todo el contenedor*/
+    bottom: -3px;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%,50%);
+    opacity: 0;
+}
+
+.menu a:hover{
+    color: #0be846;
+}
+
+/*Modificaciones de la sección 1 -  banner */
+.banner{
+    background-image:linear-gradient(200deg, #2aced1, #00000080), url('../img/fondo-ropa.jpg');
+    height: 40rem;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.contenido-banner{
+    max-width: 100rem;
+    margin: 0 auto;
+    padding: 15rem 0;
+}
+
+.contenido-banner h2{
+    color: #250381;
+    font-size: 5.5rem;
+    font-weight: 500;
+    line-height: 1.3;
+    
+}
+
+/*Estilos del footer*/
+.footer{
+    background-color: var(--color-footer);
+}
+
+.container-footer{
+    display: flex; /*le decimos que será felxible*/
+    flex-direction: column; /*flxible en dirección de columnas*/
+    gap: 4rem; /*espacio entre filas/columnas*/
+    padding: 3rem;
+}
+
+.menu-footer{
+    display: grid; /*se va a acomodar en rejillas*/
+    grid-template-columns: repeat(3,1fr) 30rem; /*(col,fraccion) tamaño*/
+    gap: 4rem;
+    justify-items: center; /*los items*/
+}
+
+.title-footer{
+    font-weight: 600; /*resaltar en negrita*/
+    font-size: 1.6rem; /*cambia tamaño de texto*/
+    text-transform: uppercase;
+}
+
+.contact-info{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+}
+
+/*******************/
+.social-icons{
+    display: grid; /*se va a acomodar en rejillas*/
+    grid-template-columns: repeat(3,1fr) 30rem; /*(col,fraccion) tamaño*/
+    gap: 4rem;
+    justify-items: center; /*los items*/
+}
+
+.social-icons img{
+    width: 4rem;
+}
+
+/****** Generando estilos para galería *******/
+
+.titulo{
+    text-align: center;
+    font-weight: 600;
+    margin: 20px 0; /*margen arriba-abajo, lados*/
+    font-size: 2.8rem;
+}
+
+.contenedor-galeria{
+    display: flex;
+    justify-content: space-evenly; /* elementos se comodan de inicio a fin ocpando todo el espacio*/
+    flex-wrap: wrap;/*distribuye en una linea hasta que se llene y hace un salto de línea cada que requiera*/
+}
+
+.caja-galeria{
+    width: 28%;
+    height: 250px;
+    margin-bottom: 30px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden; /*limita el contenido de la caja: aquí oculta lo que sale del límite*/
+    
+}
+
+.caja-galeria:hover .caja-hover{
+    transform: translate(0); /*se mostrará sólo cuando pasemos el puntero*/
+}
+
+.caja-hover{
+    transform: translate(100%,100%);/*se traslada 100% en X y Y*/
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #912b2b7e; /*color de fondo con transparencia*/
+    color: #FFF;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .4s; /* Define una transición que dure .4s*/
+}
+
+.caja-galeria img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*la imagen no se deforma, pero si se corta*/
+}
+
+/****** programar los @media Query ******/
+/* comportamientos de elementos cuando el tamaño de pantalla cambia*/
+
+/*cuando pasen los 900px, se comporta diferente*/
+@media screen and (max-width:900px) {
+    .caja-galeria{
+        width: 45%;
+    }
+
+    .caja-hover{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .caja-galeria{
+        width: 90%;
+    }
+
+    .caja-hover{
+        font-size: 18px; /*más pequeño el tamaño de letra*/
+    }
+    
+}
